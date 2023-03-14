@@ -1,0 +1,20 @@
+post:
+  tags:
+  - User
+  summary: Login user and retrieve auth token
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/UserLogin"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              token:
+                type: string
+                example: jwtToken

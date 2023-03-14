@@ -1,0 +1,60 @@
+get:
+  tags:
+  - Catalog
+  summary: Return label by id related to the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/idPathParam'
+  - $ref: '#/components/parameters/fieldsParam'
+  - $ref: '#/components/parameters/searchParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Label"
+put:
+  tags:
+  - Catalog
+  summary: Update label by id related to the contract
+  parameters:
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/idPathParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Label"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Label"
+delete:
+  tags:
+  - Catalog
+  summary: Delete label by id related to the contract
+  parameters:
+  - name: contract-id
+    in: header
+    required: true
+    schema:
+      type: string
+      example: 5c9b9239f1449405c952d457
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+      example: 5c9b9239f1449405c952d376
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

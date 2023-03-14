@@ -1,0 +1,85 @@
+email:
+  type: string
+  example: user@example.com
+invitedBy:
+  type: string
+  example: user id
+createdBy:
+  type: string
+  example: user id
+security:
+  type: object
+  properties:
+    contracts:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            example: contractId
+          services:
+            type: array
+            items:
+              type: string
+              enum:
+              - kompile
+              - kontrol
+              - konnekt
+              - kontakt
+              - insights
+              - charttool
+          isDefault:
+            type: boolean
+            example: true
+          isOwner:
+            type: boolean
+            example: true
+          createdAt:
+            type: string
+            example: invitation date
+          active:
+            type: boolean
+            example: true
+    contact:
+      type: object
+      properties:
+        mobileCountrycode:
+          type: string
+          example: phone number
+        mobile:
+          type: string
+          example: phone number
+        phoneCountrycode:
+          type: string
+          example: phone number
+        phoneAreacode:
+          type: string
+          example: phone number
+        phone:
+          type: string
+          example: phone number
+    globalRights:
+      type: object
+      properties:
+        admin:
+          type: boolean
+          example: false
+        service:
+          type: boolean
+          example: false
+        support:
+          type: boolean
+          example: false
+    salutation:
+      type: string
+      example: Mr
+    nameLast:
+      type: string
+      example: Doe
+    nameFirst:
+      type: string
+      example: John
+    type:
+      type: string
+      example: customer

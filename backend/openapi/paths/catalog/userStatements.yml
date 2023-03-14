@@ -1,0 +1,43 @@
+get:
+  tags:
+  - Catalog
+  summary: Return all user statements by contract-id
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - $ref: '#/components/parameters/searchParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserStatement'
+post:
+  tags:
+  - Catalog
+  summary: Create new user statement
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/UserStatementCreate"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

@@ -1,0 +1,158 @@
+get:
+  tags:
+  - Admin
+  summary: Return all tracks. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - name: fields
+    in: query
+    description: See query-to-mongo. Comma separated projection fields
+    schema:
+      type: string
+      enum:
+      - owner
+      - previewPosition
+      - name
+      - duration
+      - isrc
+      - filename
+      - originalReleaseDate
+      - contract
+      - contract.id
+      - label
+      - product
+      - genres
+      - artists
+      - audio
+      - territory
+      - line
+      - version
+      - language
+      - composers
+      - publishers
+      - kompile
+      - status
+      - createdAt
+      - updatedAt
+  - name: owner
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: previewPosition
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: name
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: duration
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: isrc
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: filename
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: originalReleaseDate
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: label.id
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: product.id
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: version.name
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: version.type
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: language.name
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: language.code
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: updatedAt
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: createdAt
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - $ref: '#/components/parameters/catalogStatusField'
+  - name: sort
+    in: query
+    description: See query-to-mongo. Available sort fields
+    schema:
+      type: string
+      enum:
+      - createdAt
+      - updatedAt
+      - status
+      - name
+      - duration
+      - originalReleaseDate
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Track'
+post:
+  tags:
+  - Admin
+  summary: Create new track
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/TrackCreateAdmin"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

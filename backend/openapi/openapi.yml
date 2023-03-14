@@ -1,0 +1,41 @@
+openapi: 3.0.1
+info:
+  description: ""
+  version: 4.0.0
+  title: Dig dis! API Documentation
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: mail@example.com
+servers:
+  - url: 'https://localhost:7001'
+    description: Local server
+  - url: 'https://api-v4.staging.digdis.app'
+    description: Staging
+  - url: 'https://api-v4.services.digdis.app'
+    description: Production
+tags:
+- name: HealthCheck
+  description: Check service availability
+- name: Contracts
+  description: Contracts
+- name: Contents
+  description: News
+- name: Catalog
+  description: Includes labels, tracks and products
+- name: User
+  description: User related routes
+- name: Metadata
+  description: Metadata (readonly data)
+- name: Api
+  description: Routes for service accounts
+- name: Artists
+  description: Track artists
+- name: Admin
+  description: Admin routes
+paths:
+  $ref: './paths/index.yml'
+components:
+  parameters:
+    $ref: 'components/parameters/index.yml'
+  schemas:
+    $ref: 'components/schemas/index.yml'

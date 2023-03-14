@@ -1,0 +1,71 @@
+limitParam:
+  in: query
+  name: limit
+  description: The number of returned entities per request. Defaults to 30
+  example: 30
+  schema:
+    type: number
+lastIdParam:
+  name: lastId
+  in: query
+  description: Last processed id. Used for pagination
+  default: 0
+  schema:
+    type: string
+searchParam:
+  name: search
+  in: query
+  description: Free text search. Pagination applied
+  default: 0
+  schema:
+    type: string
+fieldsParam:
+  name: fields
+  in: query
+  description: See query-to-mongo. Comma separated projection fields
+  schema:
+    type: string
+sortParam:
+  name: sort
+  in: query
+  description: See query-to-mongo. Sort fields and direction
+  schema:
+    type: string
+catalogStatusField:
+  name: status
+  in: query
+  description: See query-to-mongo. Available query field
+  schema:
+    type: string
+    enum:
+    - draft
+    - review
+    - export
+    - approved
+    - delivered
+    - released
+    - error
+    - update
+    - takedown
+idPathParam:
+  name: id
+  in: path
+  description: Record id
+  schema:
+    type: string
+contractIdParam:
+  name: contract-id
+  in: header
+  required: true
+  description: Current contract id
+  schema:
+    type: string
+    example: 5c9b9239f1449405c952d457
+authorization:
+  name: Authorization
+  in: header
+  required: true
+  description: JWT token
+  schema:
+    type: string
+    example: Bearer <JWT_Token>

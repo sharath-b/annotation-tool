@@ -1,0 +1,51 @@
+type: object
+required:
+- originDate
+- date
+- dueDate
+properties:
+  originDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  date:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  separateStart:
+    type: boolean
+    example: false
+  autoselect:
+    type: boolean
+    example: false
+  dueDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  pre:
+    type: array
+    items:
+      type: object
+      required:
+      - shop
+      - preReleaseDate
+      - preOrderDate
+      - releaseShift
+      - preSaleWeeks
+      - preReleaseWeeks
+      properties:
+        shop:
+          type: string
+          example: "shopId"
+        preReleaseDate:
+          type: string
+          example: "2018-08-09T18:31:42Z"
+        preOrderDate:
+          type: number
+          example: 23
+        releaseShift:
+          type: number
+          example: 23
+        preSaleWeeks:
+          type: number
+          example: 23
+        preReleaseWeeks:
+          type: number
+          example: 23

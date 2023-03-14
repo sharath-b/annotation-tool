@@ -1,0 +1,120 @@
+newsletter:
+  type: boolean
+  example: false
+contractModelId:
+  type: string
+  example: D50SM50M8TH0
+active:
+  type: boolean
+  example: true
+name:
+  type: string
+  example: Example contract
+language:
+  type: string
+  example: Ukrainian
+keyAccount:
+  type: object
+  properties:
+    id:
+      type: string
+      example: account id
+    name:
+      type: string
+      example: John Doe
+    email:
+      type: string
+      example: johndoe@example.com
+quote:
+  type: number
+  example: 10
+category:
+  type: string
+  enum:
+  - A
+  - B
+  - C
+  - S
+  example: A
+specialCategory:
+  type: boolean
+  example: false
+address:
+  type: object
+  properties:
+    country:
+      type: string
+      example: DE
+    city:
+      type: string
+      example: Kyiv
+    street:
+      type: string
+      example: streetname
+    house:
+      type: string
+      example: 10A
+    postcode:
+      type: string
+      example: 11111
+contact:
+  type: object
+  properties:
+    firstName:
+      type: string
+      example: test
+    lastName:
+      type: string
+      example: test
+    phone:
+      type: string
+      example: "+380931231212"
+    mobile:
+      type: string
+      example: test
+services:
+  type: string
+  enum:
+  - kompile
+  - kontrol
+  - konnekt
+  - kontakt
+  - insights
+  - charttool
+  example: kompile
+subscription:
+  $ref: '#/components/schemas/ContractSubscription'
+contractConditions:
+  $ref: '#/components/schemas/ContractConditions'
+notifications:
+  type: object
+  properties:
+    newStatements:
+      type: boolean
+      example: false
+emails:
+  type: object
+  properties:
+    kontakt:
+      type: string
+      example: example@example.com
+    statements:
+      type: string
+      example: example@example.com
+    labelmanager:
+      type: string
+      example: example@example.com
+files:
+  type: array
+  items:
+    type: object
+    properties:
+      url:
+        type: string
+        example: "http://example.com/url"
+      size:
+        type: number
+        example: 329415
+      name:
+        type: string
+        example: contractConditions.pdf

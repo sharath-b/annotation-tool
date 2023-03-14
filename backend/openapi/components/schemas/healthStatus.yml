@@ -1,0 +1,14 @@
+type: object
+properties:
+  name:
+    type: "string"
+    example: "digdis"
+  uptime:
+    type: string
+    example: 0 yrs 0 month 0 days 2:17:44
+  build:
+    type: string
+    example: test
+  version:
+    type: string
+    example: 4.0.0

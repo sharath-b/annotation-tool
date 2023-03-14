@@ -1,0 +1,14 @@
+required:
+- mp3
+- wave
+type: object
+properties:
+  mp3:
+    type: string
+    example: 'path/to/audio.mp3'
+  wave:
+    type: string
+    example: 'path/to/audio.wav'
+  flac:
+    type: string
+    example: 'path/to/audio.flac'

@@ -1,0 +1,16 @@
+type: object
+properties:
+  included:
+    type: object
+    properties:
+      countries:
+        $ref: './properties/territories.yml'
+      groups:
+        $ref: './properties/territories.yml'
+  excluded:
+    type: object
+    properties:
+      countries:
+        $ref: './properties/territories.yml'
+      groups:
+        $ref: './properties/territories.yml'

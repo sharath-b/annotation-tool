@@ -1,0 +1,12 @@
+required:
+- small
+- medium
+- full
+type: object
+properties:
+  small:
+    type: string
+  medium:
+    type: string
+  full:
+    type: string

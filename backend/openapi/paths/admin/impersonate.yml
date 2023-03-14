@@ -1,0 +1,18 @@
+get:
+  tags:
+  - Admin
+  summary: Get user JWT token.
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/idPathParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              token:
+                type: string
+                example: JWT token string

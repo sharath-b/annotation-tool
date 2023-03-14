@@ -1,0 +1,110 @@
+Artist:
+  $ref: './artist.yml'
+CoreArtist:
+  $ref: './coreArtist.yml'
+CoreArtistRequest:
+  $ref: './coreArtistRequest.yml'
+Audio:
+  $ref: './audio.yml'
+Version:
+  $ref: './version.yml'
+Language:
+  $ref: './language.yml'
+LanguageMetadata:
+  $ref: './languageMetadata.yml'
+Line:
+  $ref: './line.yml'
+Composer:
+  $ref: './composer.yml'
+Territory:
+  $ref: './territory.yml'
+Publishers:
+  $ref: './publishers.yml'
+Kompile:
+  $ref: './kompile.yml'
+Track:
+  $ref: './track.yml'
+TrackCreate:
+  $ref: './trackCreate.yml'
+TrackCreateAdmin:
+  $ref: './trackCreateAdmin.yml'
+HealthStatus:
+  $ref: './healthStatus.yml'
+Pagination:
+  $ref: './pagination.yml'
+CreateUpdateResponse:
+  $ref: './createUpdateResponse.yml'
+SubscribeRequest:
+  $ref: './subscribeRequest.yml'
+SubscribeResponse:
+  $ref: './subscribeResponse.yml'
+UnsubscribeResponse:
+  $ref: './unsubscribeResponse.yml'
+Cover:
+  $ref: './cover.yml'
+CountryMetadata:
+  $ref: './countryMetadata.yml'
+CountryGroupMetadata:
+  $ref: './countryGroupMetadata.yml'
+Description:
+  $ref: './description.yml'
+Display:
+  $ref: './display.yml'
+Format:
+  $ref: './format.yml'
+ProductFormatMetadata:
+  $ref: './productFormatMetadata.yml'
+ProductRelease:
+  $ref: './productRelease.yml'
+ProductTerritory:
+  $ref: './productTerritory.yml'
+Product:
+  $ref: './product.yml'
+ProductCreate:
+  $ref: './productCreate.yml'
+ProductCreateAdmin:
+  $ref: './productCreateAdmin.yml'
+LabelKompile:
+  $ref: './labelKompile.yml'
+File:
+  $ref: './file.yml'
+Location:
+  $ref: './location.yml'
+SocialMedia:
+  $ref: './socialMedia.yml'
+Label:
+  $ref: './label.yml'
+LabelCreate:
+  $ref: './labelCreate.yml'
+LabelCreateAdmin:
+  $ref: './labelCreateAdmin.yml'
+Contract:
+  $ref: './contract.yml'
+ContractUser:
+  $ref: './contractUser.yml'
+ContractSubscription:
+  $ref: './contractSubscription.yml'
+ContractConditions:
+  $ref: './contractConditions.yml'
+User:
+  $ref: './user.yml'
+UserStatement:
+  $ref: './userStatement.yml'
+UserStatementCreate:
+  $ref: './userStatementCreate.yml'
+UserInfo:
+  $ref: './userInfo.yml'
+UserLogin:
+  $ref: './userLogin.yml'
+GenreMetadata:
+  $ref: './genreMetadata.yml'
+ShopMetadata:
+  $ref: './shopMetadata.yml'
+SuccessResponse:
+  $ref: './successResponse.yml'
+Statement:
+  $ref: './statement.yml'
+StatementCreate:
+  $ref: './statementCreate.yml'
+InvalidReviewFields:
+  $ref: './invalidReviewFields.yml'

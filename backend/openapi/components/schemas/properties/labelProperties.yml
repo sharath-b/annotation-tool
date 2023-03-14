@@ -1,0 +1,26 @@
+name:
+  type: string
+  example: label name
+lcCode:
+  type: string
+  example: lc code
+description:
+  type: string
+  example: label description
+website:
+  type: string
+  example: "https://example.com"
+kompile:
+  $ref: '#/components/schemas/LabelKompile'
+covers:
+  $ref: '#/components/schemas/Cover'
+genreIds:
+  type: array
+  items:
+    type: string
+location:
+  $ref: '#/components/schemas/Location'
+socialMedia:
+  type: array
+  items:
+    $ref: '#/components/schemas/SocialMedia'

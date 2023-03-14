@@ -1,0 +1,49 @@
+get:
+  tags:
+  - Artists
+  summary: Return artist by id
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/idPathParam'
+  - $ref: '#/components/parameters/fieldsParam'
+  - $ref: '#/components/parameters/searchParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CoreArtist"
+put:
+  tags:
+  - Artists
+  summary: Update artist by id
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/idPathParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/CoreArtistRequest"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CoreArtist"
+delete:
+  tags:
+  - Artists
+  summary: Delete label by id related to the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/idPathParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

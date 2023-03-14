@@ -1,0 +1,20 @@
+post:
+  tags:
+  - Admin
+  summary: Upload file to the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                example: 5d110cf32fe10117521faad1
+              url:
+                type: string
+                example: "https://path/to/file"

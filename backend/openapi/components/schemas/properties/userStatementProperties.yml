@@ -1,0 +1,109 @@
+title:
+  type: string
+  example: Title
+createdBy:
+  type: object
+  properties:
+    id:
+      type: string
+      example: ObjectId
+    name:
+      type: string
+      example: John Doe
+    email:
+      type: string
+      example: john@example.com
+lastSubmissionAt:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+archived:
+  type: boolean
+  example: false
+extendedData:
+  type: boolean
+  example: true
+artistShare:
+  type: number
+  example: 0.2
+platforms:
+  type: array
+  items:
+    type: string
+    example: ids
+fromDate:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+toDate:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+timeframe:
+  type: string
+  example: basic
+  enum:
+  - basic
+  - repeated
+autoSubmit:
+  type: object
+  properties:
+    enabled:
+      type: boolean
+      example: false
+    type:
+      type: string
+      example: monthly
+      enum:
+      - monthly
+      - quarterly
+      - half-yearly
+      - yearly
+    receiver:
+      type: string
+      example: john@example.com
+sendingHistory:
+  type: array
+  items:
+    type: object
+    properties:
+      date:
+        type: string
+        example: "2018-08-09T18:31:42Z"
+      sum:
+        type: number
+        example: 20
+      url:
+        type: string
+        example: "https://pdflink"
+  contract:
+    type: object
+    properties:
+      id:
+        type: string
+        example: objectId
+  filter:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          example: catNo
+          enum:
+          - isrc
+          - artist
+          - track
+          - label
+          - catalogNo
+        value:
+          type: string
+          example: Any value
+customPositions:
+  type: array
+  items:
+    type: object
+    properties:
+      title:
+        type: string
+        example: position 1
+      value:
+        type: number
+        example: 20

@@ -1,0 +1,61 @@
+type: object
+properties:
+  contractId:
+    type: string
+    example: ContractUuid
+  owner:
+    type: boolean
+    example: false
+  previewPosition:
+    type: integer
+    format: int32
+    example: 1
+  name:
+    type: string
+    example: Awesome track
+  duration:
+    type: integer
+    format: int32
+    example: 320000
+  isrc:
+    type: string
+    example: isrc
+  filename:
+    type: string
+    example: myAwesomeTrack
+  originalReleaseDate:
+    type: string
+    exapmple: "2018-08-09T18:31:42Z"
+  label:
+    type: object
+    properties:
+      _id:
+        type: string
+        example: 5c9ddd7469565200646fbeef
+      name:
+        type: string
+        example: label name
+  productId:
+    type: string
+    example: 5c9ddd7469565200646fbeef
+  genreIds:
+    type: array
+    items:
+      type: string
+      example: 5c9ddd7469565200646fbeew
+  audio:
+    $ref: "#/components/schemas/Audio"
+  artists:
+    type: array
+    items:
+      $ref: "#/components/schemas/Artist"
+  line:
+    $ref: "#/components/schemas/Line"
+  version:
+    $ref: "#/components/schemas/Version"
+  language:
+    $ref: "#/components/schemas/Language"
+  publishers:
+    $ref: "#/components/schemas/Publishers"
+  kompile:
+    $ref: "#/components/schemas/Kompile"

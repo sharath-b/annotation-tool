@@ -1,0 +1,11 @@
+type: object
+properties:
+  plan:
+    type: string
+    enum: [pro, proplus]
+  type:
+    type: string
+    enum: [monthly, annually]
+  token:
+    type: string
+    description: STRIPE token

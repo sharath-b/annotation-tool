@@ -1,0 +1,34 @@
+get:
+  tags:
+  - Admin
+  summary: Return contract by id. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/idPathParam'
+  - $ref: '#/components/parameters/fieldsParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Contract"
+put:
+  tags:
+  - Admin
+  summary: Update contract by id. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/idPathParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Contract"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Contract"

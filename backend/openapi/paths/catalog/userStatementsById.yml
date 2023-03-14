@@ -1,0 +1,52 @@
+get:
+  tags:
+  - Catalog
+  summary: Return user statement by id related to the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/idPathParam'
+  - $ref: '#/components/parameters/fieldsParam'
+  - $ref: '#/components/parameters/searchParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/UserStatement"
+put:
+  tags:
+  - Catalog
+  summary: Update user statement by id related to the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/idPathParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/UserStatementCreate"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/UserStatement"
+delete:
+  tags:
+  - Catalog
+  summary: Delete user statement by id related to the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/idPathParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

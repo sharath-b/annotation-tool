@@ -1,0 +1,47 @@
+get:
+  tags:
+  - Admin
+  summary: Return all user contracts. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - name: contractId
+    in: path
+    description: Contract id
+    required: true
+    schema:
+      type: string
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ContractUser'
+post:
+  tags:
+  - Admin
+  summary: Invite user to a contract. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - name: contractId
+    in: path
+    description: Contract id
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            email:
+              type: string
+              example: user@example.com
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"

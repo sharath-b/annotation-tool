@@ -1,0 +1,32 @@
+post:
+  tags:
+  - Admin
+  summary: Move product to review state. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/idPathParam'
+  - in: path
+    name: action
+    schema:
+      type: string
+      enum:
+      - accept
+      - reject
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: Description reason
+            invalid:
+              $ref: '#/components/schemas/InvalidReviewFields'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"

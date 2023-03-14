@@ -1,0 +1,18 @@
+post:
+  tags:
+  - Contracts
+  summary: Subscribe contract to a plan
+  parameters:
+    - $ref: '#/components/parameters/idPathParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/SubscribeRequest"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SubscribeResponse"

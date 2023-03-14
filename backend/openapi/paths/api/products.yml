@@ -1,0 +1,31 @@
+get:
+  tags:
+  - Api
+  summary: Return all products
+  parameters:
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - name: "contract.id"
+    in: query
+    description: Filter products by contract id
+    schema:
+      type: string
+  - name: "release.date"
+    in: query
+    description: Filter products by release date. Also support query-to-mongo range filtration
+    schema:
+      type: string
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'

@@ -1,0 +1,38 @@
+
+type: object
+properties:
+  provider:
+    type: object
+    properties:
+      customerId:
+        type: string
+        example: 5c9ddd7469565200646fbeew
+      subscriptionId:
+        type: string
+        example: 5c9ddd7469565200646fbeew
+  plan:
+    type: string
+    enum:
+    - basic
+    - pro
+    - proplus
+  type:
+    type: string
+    enum:
+    - monthly
+    - annually
+  amount:
+    type: number
+    example: 10
+  autoRenewal:
+    type: boolean
+    example: true
+  startDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  dueDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  cancelledDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"

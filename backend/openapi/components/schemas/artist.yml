@@ -1,0 +1,24 @@
+required:
+- position
+- role
+- id
+- name
+- primary
+type: object
+properties:
+  position:
+    type: integer
+    format: int32
+    example: 1
+  role:
+    type: string
+    example: performer
+  id:
+    type: string
+    example: 5c7f9de32e6d13b9867c2f8c
+  name:
+    type: string
+    example: Sven Wittekind
+  primary:
+    type: boolean
+    example: true

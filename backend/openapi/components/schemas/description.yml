@@ -1,0 +1,9 @@
+required:
+- long
+- short
+type: object
+properties:
+  long:
+    type: string
+  short:
+    type: string

@@ -1,0 +1,111 @@
+type: object
+properties:
+  startDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  possibleEndDate:
+    type: string
+    example:  "2018-08-09T18:31:42Z"
+  exclusive:
+    type: boolean
+    example: false
+  chargeServicefees:
+    type: boolean
+    example: false
+  template:
+    type: string
+    enum:
+    - "60/40"
+    - "70/30"
+    - "80/20"
+    - "Non-Exclusive"
+    - YouTuber
+    - "Third-Party License"
+    - Custom
+  exploitation:
+    type: string
+    enum:
+    - Exclusive
+    - Non-Exclusive
+    - YouTuber
+    - Third-Party License
+  duration:
+    type: number
+    example: 6
+  renew:
+    type: number
+    example: 6
+  renewDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  dealShare:
+    type: number
+    example: 0.0
+  marketingShare:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - basis
+        - netto
+      amount:
+        type: number
+        example: 0.0
+  mechanicals:
+    type: number
+    example: 0
+  shopsExceptions:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 123
+        amount:
+          type: number
+          example: 0.0
+  thirdPartyShare:
+    type: number
+    example: 0
+  shops:
+    type: object
+    properties:
+      mode:
+        type: string
+        enum:
+        - All
+        - included
+        - excluded
+      included:
+        type: array
+        items:
+          type: string
+      excluded:
+        type: array
+        items:
+          type: string
+  overridesContract:
+    type: object
+    properties:
+      id:
+        type: string
+        example: ObjectId
+      name:
+        type: string
+        example: contract name
+  overridesAmount:
+    type: number
+    example: 0.0
+  endDate:
+    type: string
+    example: "2018-08-09T18:31:42Z"
+  roles:
+    type: string
+    enum:
+    - exclusive
+    - kompiler
+    - youtube
+    - grm
+

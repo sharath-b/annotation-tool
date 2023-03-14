@@ -1,0 +1,107 @@
+get:
+  tags:
+  - Admin
+  summary: Return all contracts. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - $ref: '#/components/parameters/searchParam'
+  - name: fields
+    in: query
+    description: See query-to-mongo. Comma separated projection fields
+    schema:
+      type: string
+      enum:
+      - name
+      - category
+      - emails
+      - emails.kontakt
+      - emails.statements
+      - emails.labelmanager
+      - exploitation
+      - kompile
+      - createdAt
+      - updatedAt
+  - name: name
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: email
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: createdAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: updatedAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: search
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: emails.kontakt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: emails.statements
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: emails.labelmanager
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - $ref: '#/components/parameters/catalogStatusField'
+  - name: sort
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+      enum:
+      - name
+      - createdAt
+      - updatedAt
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contract'
+post:
+  tags:
+  - Admin
+  summary: Create new contract. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Contract"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

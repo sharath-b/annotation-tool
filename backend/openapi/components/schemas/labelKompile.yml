@@ -1,0 +1,15 @@
+type: object
+properties:
+  processed:
+    type: boolean
+    example: false
+  processedDate:
+    type: string
+    example: "2019-03-22T09:51:52Z"
+  status:
+    type: string
+    enum:
+    - new
+    - optin
+    - optout
+    example: new

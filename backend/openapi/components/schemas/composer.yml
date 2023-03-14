@@ -1,0 +1,11 @@
+required:
+- id
+- name
+type: object
+properties:
+  id:
+    type: string
+    example: 5c9ddd7469565200646fbeed
+  name:
+    type: string
+    example: Awesome composer

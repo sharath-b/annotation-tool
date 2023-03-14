@@ -1,0 +1,30 @@
+post:
+  tags:
+  - Catalog
+  summary: Move product to review state
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/idPathParam'
+  - in: path
+    name: action
+    schema:
+      type: string
+      enum:
+      - submit
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: Please process till...
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"

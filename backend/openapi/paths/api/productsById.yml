@@ -1,0 +1,14 @@
+get:
+  tags:
+  - Api
+  summary: Return product by id
+  parameters:
+  - $ref: '#/components/parameters/idPathParam'
+  - $ref: '#/components/parameters/fieldsParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Product"

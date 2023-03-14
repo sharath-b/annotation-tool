@@ -1,0 +1,12 @@
+get:
+  tags:
+  - Api
+  summary: FUGA webhook that notifies if product was submitted successfully
+  parameters:
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"

@@ -1,0 +1,113 @@
+get:
+  tags:
+  - Catalog
+  summary: Return all labels by contract-id
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - $ref: '#/components/parameters/searchParam'
+  - name: fields
+    in: query
+    description: See query-to-mongo. Comma separated projection fields
+    schema:
+      type: string
+      enum:
+      - name
+      - lcCode
+      - description
+      - website
+      - kompile
+      - genres
+      - location.city
+      - location.country.code
+      - location.country.name
+      - kompile.processed
+      - kompile.processedDate
+      - kompile.status
+      - socialMedia
+      - file
+      - covers
+      - status
+      - createdAt
+      - updatedAt
+  - name: createdAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: updatedAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: name
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: lcCode
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: description
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: website
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: kompile
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - $ref: '#/components/parameters/catalogStatusField'
+  - name: sort
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+      enum:
+      - name
+      - lcCode
+      - createdAt
+      - updatedAt
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Label'
+post:
+  tags:
+  - Catalog
+  summary: Create new label
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/LabelCreate"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

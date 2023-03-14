@@ -1,0 +1,11 @@
+ coverage
+dockerfile
+test/
+app/views/**/*
+app/public/**/*
+postgres-data
+*.yml
+*.md
+*.zip
+*.sh
+*.json

@@ -1,0 +1,43 @@
+put:
+  tags:
+  - Contracts
+  summary: Invite user to the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - name: userId
+    in: path
+    description: User id
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ContractUser"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"
+delete:
+  tags:
+  - Contracts
+  summary: Remove user from the contract
+  parameters:
+  - $ref: '#/components/parameters/contractIdParam'
+  - name: userId
+    in: path
+    required: true
+    schema:
+      type: string
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"

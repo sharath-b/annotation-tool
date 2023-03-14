@@ -1,0 +1,28 @@
+type: array
+items:
+  type: object
+  properties:
+    id:
+      type: string
+      example: ObjectId
+    type:
+      type: string
+      example: track
+      enum:
+      - track
+      - product
+      - label
+    fields:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            example: title
+          message:
+            type: object
+            properties:
+              errorTitle:
+                type: string
+                example: Invalid definition

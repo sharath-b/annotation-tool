@@ -1,0 +1,135 @@
+/:
+  $ref: './healthStatus.yml'
+/alive:
+  $ref: './healthStatus.yml'
+
+/user/info:
+  $ref: 'user/info.yml'
+/user/login:
+  $ref: 'user/login.yml'
+/user/resetpassword:
+  $ref: 'user/resetPassword.yml'
+/user/forgotpassword:
+  $ref: 'user/forgotPassword.yml'
+/user/changepassword:
+  $ref: 'user/changePassword.yml'
+/contracts/{id}/subscribe:
+  $ref: './contracts/contractsSubscribe.yml'
+/contracts/{id}/unsubscribe:
+  $ref: './contracts/contractsUnsubscribe.yml'
+/contract/users:
+  $ref: './contracts/contractUsers.yml'
+/contract/users/{userId}:
+  $ref: './contracts/contractUsersById.yml'
+/artists:
+  $ref: './artists.yml'
+/artists/{id}:
+  $ref: './artistsById.yml'
+/news:
+  $ref: './news.yml'
+
+/catalog/tracks:
+  $ref: 'catalog/tracks.yml'
+/catalog/tracks/{id}:
+  $ref: 'catalog/tracksById.yml'
+/catalog/tracks/{id}/upload:
+  $ref: 'catalog/tracksUpload.yml'
+/catalog/tracks/{id}/upload/check:
+  $ref: 'catalog/tracksUploadCheck.yml'
+/catalog/products:
+  $ref: 'catalog/products.yml'
+/catalog/products/{id}/transition/{action}:
+  $ref: 'catalog/productsTransition.yml'
+/catalog/products/{id}:
+  $ref: 'catalog/productsById.yml'
+/catalog/products/{id}/history:
+  $ref: 'catalog/productTransitionHistory.yml'
+/catalog/products/{id}/cover:
+  $ref: 'catalog/productsUpload.yml'
+/catalog/products/{id}/cover/check:
+  $ref: 'catalog/productsUploadCheck.yml'
+/catalog/labels:
+  $ref: 'catalog/labels.yml'
+/catalog/labels/{id}:
+  $ref: 'catalog/labelsById.yml'
+/catalog/labels/{id}/cover:
+  $ref: 'catalog/labelsUpload.yml'
+/catalog/labels/{id}/cover/check:
+  $ref: 'catalog/labelsUploadCheck.yml'
+/catalog/statements:
+  $ref: 'catalog/statements.yml'
+/catalog/statements/{id}:
+  $ref: 'catalog/statementsById.yml'
+/catalog/userstatements:
+  $ref: 'catalog/userStatements.yml'
+/catalog/userstatements/{id}:
+  $ref: 'catalog/userStatementsById.yml'
+
+/metadata/countries:
+  $ref: 'metadata/countries.yml'
+/metadata/countrygroups:
+  $ref: 'metadata/countryGroups.yml'
+/metadata/productformats:
+  $ref: 'metadata/productFormats.yml'
+/metadata/languages:
+  $ref: 'metadata/languages.yml'
+/metadata/genres:
+  $ref: 'metadata/genres.yml'
+/metadata/shops:
+  $ref: 'metadata/shops.yml'
+
+/api/products:
+  $ref: 'api/products.yml'
+/api/products/{id}:
+  $ref: 'api/productsById.yml'
+/api/tracks:
+  $ref: 'api/tracks.yml'
+/api/tracks/{id}:
+  $ref: 'api/tracksById.yml'
+/api/contracts/{id}:
+  $ref: 'api/contractsById.yml'
+/api/fuga/products/ingestion/callback:
+  $ref: 'api/fugaIngestion.yml'
+
+/admin/tracks:
+  $ref: 'admin/tracks.yml'
+/admin/tracks/{id}:
+  $ref: 'admin/tracksById.yml'
+/admin/products:
+  $ref: 'admin/products.yml'
+/admin/products/{id}:
+  $ref: 'admin/productsById.yml'
+/admin/products/{id}/history:
+  $ref: 'admin/productHistory.yml'
+/admin/products/{id}/transition/{action}:
+  $ref: 'admin/productsTransition.yml'
+/admin/labels:
+  $ref: 'admin/labels.yml'
+/admin/labels/{id}:
+  $ref: 'admin/labelsById.yml'
+/admin/statements:
+  $ref: 'admin/statements.yml'
+/admin/statements/{id}:
+  $ref: 'admin/statementsById.yml'
+/admin/users/{id}/impersonate:
+  $ref: 'admin/impersonate.yml'
+/admin/users:
+  $ref: 'admin/users.yml'
+/admin/users/{id}:
+  $ref: 'admin/usersById.yml'
+/admin/contracts:
+  $ref: 'admin/contracts.yml'
+/admin/contracts/{id}:
+  $ref: 'admin/contractsById.yml'
+/admin/contracts/{id}/files/upload:
+  $ref: 'admin/contractsUpload.yml'
+/admin/contracts/{id}/files/{fileId}:
+  $ref: 'admin/contractsFilesById.yml'
+/admin/contracts/{contractId}/users:
+  $ref: 'admin/contractUsers.yml'
+/admin/contracts/{contractId}/users/{userId}:
+  $ref: 'admin/contractUsersById.yml'
+/admin/products/export:
+  $ref: 'admin/exportAll.yml'
+/admin/products/export/byUser:
+  $ref: 'admin/exportByUser.yml'

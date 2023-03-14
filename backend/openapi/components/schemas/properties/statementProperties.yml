@@ -1,0 +1,51 @@
+override:
+  type: boolean
+  example: false
+description:
+  type: string
+  example: some description
+urlStatement:
+  type: string
+  example: http://
+amount:
+  type: number
+  example: 20
+internal:
+  type: boolean
+  example: false
+paid:
+  type: boolean
+  example: false
+month:
+  type: number
+  example: 6
+fromDate:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+toDate:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+contract:
+  type: object
+  properties:
+    id:
+      type: string
+      example: 5c9ddd7469565200646fbeew
+year:
+  type: string
+  example: 2006
+importedAt:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+billDate:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+statementDate:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+revertedAt:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+updatedBy:
+  type: string
+  example: 5c9ddd7469565200646fbeew

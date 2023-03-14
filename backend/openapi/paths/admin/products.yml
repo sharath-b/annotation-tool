@@ -1,0 +1,134 @@
+get:
+  tags:
+  - Admin
+  summary: Return all products. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - name: fields
+    in: query
+    description: See query-to-mongo. Comma separated projection fields
+    schema:
+      type: string
+      enum:
+      - title
+      - catNo
+      - contract
+      - contract.id
+      - upc
+      - customUpc
+      - serial
+      - genre
+      - tracks
+      - format
+      - display
+      - artists
+      - label
+      - description
+      - release
+      - line
+      - territorialRights
+      - cover
+      - createdAt
+      - updatedAt
+      - status
+  - name: title
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: catNo
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: upc
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: customUpc
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: serial
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: genre.id
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: genre.name
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: label.id
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: label.name
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: createdAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: updatedAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - $ref: '#/components/parameters/catalogStatusField'
+  - name: sort
+    in: query
+    description: See query-to-mongo. Available sort field
+    schema:
+      type: string
+      enum:
+      - createdAt
+      - updatedAt
+      - title
+      - genre.name
+
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+post:
+  tags:
+  - Admin
+  summary: Create new product. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ProductCreateAdmin"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

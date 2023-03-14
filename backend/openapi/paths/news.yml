@@ -1,0 +1,40 @@
+get:
+  tags:
+  - Contents
+  summary: Return content entities (news)
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              _id:
+                type: string
+                example: objectId
+              _created:
+                type: string
+                example: "2019-04-04T13:32:48.109Z"
+              type:
+                type: string
+                example: news
+              title:
+                type: string
+                example: content title
+              translations:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    titleTranslated:
+                      type: string
+                      example: translated title
+                    html:
+                      type: string
+                      example: html data
+                    idLanguage:
+                      type: string
+                      example: language ID
+    500:
+      description: Internal Server error

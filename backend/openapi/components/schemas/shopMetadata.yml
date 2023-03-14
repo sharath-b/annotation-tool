@@ -1,0 +1,14 @@
+type: object
+properties:
+  _id:
+    type: string
+    example: 5c9ddd7469565200646fbeew
+  name:
+    type: string
+    example: Beatport
+  createdAt:
+    type: string
+    example: '2018-08-09T18:31:42Z'
+  updatedAt:
+    type: string
+    example: '2018-08-09T18:31:42Z'

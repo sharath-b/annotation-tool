@@ -1,0 +1,10 @@
+type: object
+properties:
+  included:
+    $ref: 'properties/territories.yml'
+  excluded:
+    $ref: 'properties/territories.yml'
+  groupsIncluded:
+    $ref: 'properties/territories.yml'
+  groupsExcluded:
+    $ref: 'properties/territories.yml'

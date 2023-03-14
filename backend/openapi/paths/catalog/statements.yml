@@ -1,0 +1,170 @@
+get:
+  tags:
+  - Catalog
+  summary: Return all statements by contract-id
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - name: fields
+    in: query
+    description: See query-to-mongo. Comma separated projection fields
+    schema:
+      type: string
+      enum:
+      - name
+      - override
+      - description
+      - urlStatement
+      - amount
+      - internal
+      - paid
+      - month
+      - fromDate
+      - toDate
+      - contract.id
+      - year
+      - importedAt
+      - billDate
+      - statementDate
+      - revertedAt
+      - updatedBy
+      - createdAt
+      - updatedAt
+  - name: name
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: override
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: description
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: urlStatement
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: amount
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: internal
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: paid
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: month
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: fromDate
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: toDate
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: contract
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: year
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: importedAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: billDate
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: statementDate
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: revertedAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: updatedBy
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: createdAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: updatedAt
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+  - name: sort
+    in: query
+    description: See query-to-mongo. Available query field
+    schema:
+      type: string
+      enum:
+      - createdAt
+      - updatedAt
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Statement'
+post:
+  tags:
+  - Catalog
+  summary: Create new statement
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/StatementCreate"
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CreateUpdateResponse"

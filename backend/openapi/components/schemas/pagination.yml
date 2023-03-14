@@ -1,0 +1,7 @@
+type: object
+properties:
+  limit:
+    type: number
+  lastId:
+    type: string
+    example: 5c5d5ba647b04ac33778881f

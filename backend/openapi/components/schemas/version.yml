@@ -1,0 +1,25 @@
+required:
+- name
+- type
+type: object
+properties:
+  name:
+    type: string
+    example: '1.0.0'
+  type:
+    type: string
+    enum:
+      - Original
+      - Remix
+      - Radio-Edit
+      - Instrumental
+      - Dub
+      - Accapella
+      - DJ-Tool
+      - Karaoke-Mix/Beats
+      - Acoustic
+      - Live
+      - Rework
+      - Remastered
+      - Extended
+    example: Live

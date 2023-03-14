@@ -1,0 +1,119 @@
+artists:
+  type: array
+  items:
+    $ref: '#/components/schemas/Artist'
+catNo:
+  type: string
+  example: NTD202
+contract:
+  type: object
+  properties:
+    id:
+      type: string
+      example: Contract id
+    quote:
+      type: number
+      example: 10
+    category:
+      type: string
+      enum:
+      - A
+      - B
+      - C
+      - S
+    specialCategory:
+      type: boolean
+      example: true
+createdBy:
+  type: object
+  properties:
+    id:
+      type: string
+      example: 5c9ddd7469565200646fbeew,
+    name:
+      type: string
+      example: John Doe
+    email:
+      type: string
+      example: email@example.org
+reviewedBy:
+  type: object
+  properties:
+    id:
+      type: string
+      example: 5c9ddd7469565200646fbeew,
+    name:
+      type: string
+      example: John Doe
+    email:
+      type: string
+      example: email@example.org
+reviewedAt:
+  type: string
+  example: "2018-08-09T18:31:42Z"
+covers:
+  $ref: '#/components/schemas/Cover'
+description:
+  $ref: '#/components/schemas/Description'
+display:
+  $ref: '#/components/schemas/Display'
+format:
+  $ref: '#/components/schemas/Format'
+genres:
+  type: object
+  properties:
+    id:
+      type: string
+      example: 5c9ddd7469565200646fbeew
+    name:
+      type: string
+      example: genre name
+label:
+  type: object
+  properties:
+    id:
+      type: string
+      example: 5c9ddd7469565200646fbeew
+    name:
+      type: string
+      example: label name
+line:
+  $ref: '#/components/schemas/Line'
+serial:
+  type: string
+  example: serialNumber
+title:
+  type: string
+  example: Best product
+tracks:
+  type: array
+  items:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        example: 5c9ddd7469565200646fbeew
+      bundled:
+        type: boolean
+release:
+  $ref: '#/components/schemas/ProductRelease'
+territories:
+  $ref: '#/components/schemas/ProductTerritory'
+upc:
+  type: string
+  example: upc
+customUpc:
+  type: string
+  example: customUpc
+releaseBundleStep:
+  type: string
+  enum:
+  - originals
+  - remixes
+  - tracklist
+  - productInfo
+  - coverUpload
+  - releaseDate
+  - summary

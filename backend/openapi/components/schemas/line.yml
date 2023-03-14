@@ -1,0 +1,21 @@
+required:
+- pYear
+- cYear
+- pText
+- cText
+type: object
+properties:
+  pYear:
+    type: integer
+    format: int32
+    example: 2017
+  cYear:
+    type: integer
+    format: int32
+    example: 2017
+  pText:
+    type: string
+    example: description
+  cText:
+    type: string
+    example: description

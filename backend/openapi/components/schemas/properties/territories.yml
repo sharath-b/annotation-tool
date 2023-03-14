@@ -1,0 +1,4 @@
+type: array
+items:
+  type: string
+  example: 5c9ddd7469565200646fbeew

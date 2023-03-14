@@ -1,0 +1,39 @@
+get:
+  tags:
+  - Catalog
+  summary: Returns review history list
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  - $ref: '#/components/parameters/idPathParam'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Product exported
+              status:
+                type: string
+                example: export
+              createdAt:
+                type: string
+                example: "2019-07-15T12:57:31.188Z"
+              invalid:
+                $ref: '#/components/schemas/InvalidReviewFields'
+              reviewedBy:
+                type: object
+                properties:
+                  email:
+                    type: string
+                    example: user@example.org
+                  name:
+                    type: string
+                    example: John Doe
+                  id:
+                    type: string
+                    example: objectId

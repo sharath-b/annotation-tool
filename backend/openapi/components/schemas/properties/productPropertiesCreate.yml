@@ -1,0 +1,61 @@
+artists:
+  type: array
+  items:
+    $ref: '#/components/schemas/Artist'
+catNo:
+  type: string
+  example: NTD202
+covers:
+  $ref: '#/components/schemas/Cover'
+description:
+  $ref: '#/components/schemas/Description'
+display:
+  $ref: '#/components/schemas/Display'
+format:
+  $ref: '#/components/schemas/Format'
+genreId:
+  type: string
+  example: 5c9ddd7469565200646fbeew
+labelId:
+  type: string
+  example: 5c9ddd7469565200646fbeew
+line:
+  $ref: '#/components/schemas/Line'
+serial:
+  type: string
+  example: serialNumber
+title:
+  type: string
+  example: Best product
+tracks:
+  type: array
+  items:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        example: 5c9ddd7469565200646fbeew
+      bundled:
+        type: boolean
+release:
+  $ref: '#/components/schemas/ProductRelease'
+territorialRights:
+  $ref: '#/components/schemas/ProductTerritory'
+upc:
+  type: string
+  example: upc
+customUpc:
+  type: string
+  example: customUpc
+releaseBundleStep:
+  type: string
+  enum:
+  - originals
+  - remixes
+  - tracklist
+  - productInfo
+  - coverUpload
+  - releaseDate
+  - summary

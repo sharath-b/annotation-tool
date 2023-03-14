@@ -1,0 +1,58 @@
+type: object
+properties:
+  id:
+    type: string
+    example: 5c9ddd7469565200646fbeew
+  email:
+    type: string
+    example: example@example.com
+  contact:
+    type: object
+    properties:
+      mobileCountrycode:
+        type: string
+        example: 38
+      mobile:
+        type: string
+        example: 123456789
+      phoneCountrycode:
+        type: string
+        example: 093
+      phoneAreacode:
+        type: string
+        example: 12
+      phone:
+        type: string
+        example: 123456789
+  salutation:
+    type: string
+    example: Mr
+  nameLast:
+    type: string
+    example: Doe
+  nameFirst:
+    type: string
+    example: John
+  picturebase64:
+    type: string
+    example: "https://path/to/avatar"
+  isAdmin:
+    type: boolean
+    example: true
+  contracts:
+    type: array
+    items:
+      type: object
+      properties:
+        contract:
+          type: object
+          properties:
+            $ref: './properties/contractProperties.yml'
+        isOwner:
+          type: boolean
+          example: false
+        services:
+          type: array
+          items:
+            type: string
+            example: insights

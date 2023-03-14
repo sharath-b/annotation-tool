@@ -1,0 +1,13 @@
+post:
+  tags:
+  - Admin
+  summary: Export all approved products to FUGA. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"

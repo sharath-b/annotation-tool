@@ -1,0 +1,23 @@
+delete:
+  tags:
+  - Admin
+  summary: Remove file from the contract
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - name: id
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: fileId
+    in: path
+    required: true
+    schema:
+      type: string
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessResponse"

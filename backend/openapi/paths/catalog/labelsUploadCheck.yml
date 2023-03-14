@@ -1,0 +1,27 @@
+post:
+  tags:
+  - Catalog
+  summary: Check label image
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/contractIdParam'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            cover:
+              type: string
+              format: binary
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: true

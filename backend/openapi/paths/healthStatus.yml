@@ -1,0 +1,13 @@
+get:
+  tags:
+  - HealthCheck
+  summary: Return service status and version
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/HealthStatus"
+    500:
+      description: Internal Server error

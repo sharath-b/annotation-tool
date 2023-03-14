@@ -1,0 +1,16 @@
+type: object
+properties:
+  plan:
+    type: string
+    enum: [pro, proplus]
+  type:
+    type: string
+    enum: [monthly, annually]
+  startDate:
+    type: string
+    example: '2019-03-22T09:51:52Z'
+    description: subscription start ISO date
+  dueDate:
+    type: string
+    example: '2019-03-22T09:51:52Z'
+    description: subscription end ISO date

@@ -1,0 +1,20 @@
+type: object
+required:
+- city
+- country
+properties:
+  city:
+    type: string
+    example: Kyiv
+  country:
+    type: object
+    required:
+    - code
+    - name
+    properties:
+      code:
+        type: string
+        example: UA
+      name:
+        type: string
+        example: Ukraine

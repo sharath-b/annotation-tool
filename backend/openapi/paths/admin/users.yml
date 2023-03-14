@@ -1,0 +1,51 @@
+get:
+  tags:
+  - Admin
+  summary: Return all users. Only accessible by support users
+  parameters:
+  - $ref: '#/components/parameters/authorization'
+  - $ref: '#/components/parameters/lastIdParam'
+  - $ref: '#/components/parameters/limitParam'
+  - $ref: '#/components/parameters/searchParam'
+  - name: fields
+    in: query
+    description: See query-to-mongo. Comma separated projection fields
+    schema:
+      type: string
+      example: 'globalRights,email,security.contracts'
+  - name: globalRights.support
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: globalRights.admin
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: globalRights.service
+    in: query
+    description: See query-to-mongo. Available query fields
+    schema:
+      type: string
+  - name: sort
+    in: query
+    description: See query-to-mongo. Available sort fields
+    schema:
+      type: string
+      enum:
+      - email
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              entities:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
