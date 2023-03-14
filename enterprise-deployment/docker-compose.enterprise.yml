@@ -1,0 +1,68 @@
+version: "3"
+services:
+  # nginx based on ubi;
+  proxy:
+    image: nginx-proxy:latest
+    container_name: proxy
+    ports:
+      - "80:8080"
+      - "443:8443"
+    volumes:
+      - ./enterprise-deployment/nginx-image/nginx.conf:/etc/nginx/nginx.conf
+      - ./enterprise-deployment/nginx-image/default.conf:/opt/app-root/etc/nginx.d/default.conf
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: deepannotate-be
+    environment:
+      NODE_ENV: "${NODE_ENV}"
+      POSTGRES_USER: "${PROD_DB_USERNAME}" # postgres:12 style
+      POSTGRES_PASSWORD: ${PROD_DB_PASSWORD} # postgres:12 style
+      POSTGRES_DB: ${PROD_DB_NAME}  # postgres:12 style
+      POSTGRESQL_USER: "${PROD_DB_USERNAME}" # rhel8/postgresql-12 style
+      POSTGRESQL_PASSWORD: "${PROD_DB_PASSWORD}" # rhel8/postgresql-12 style
+      POSTGRESQL_DATABASE: ${PROD_DB_NAME} # rhel8/postgresql-12 style
+    ports:
+      - "7001:7001"
+    links:
+      - "db:database"
+    depends_on:
+      - db
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  db:
+  # default Postgres image
+  #  image: "postgres:10"
+
+  # UBI Image for nterprise deployment
+   image: registry.redhat.io/rhel8/postgresql-12 # some clients prefer redhat, so you can choose
+
+    container_name: "postgres"
+    environment:
+      POSTGRES_USER: "${PROD_DB_USERNAME}" # postgres:12 style
+      POSTGRES_PASSWORD: ${PROD_DB_PASSWORD} # postgres:12 style
+      POSTGRES_DB: ${PROD_DB_NAME}  # postgres:12 style
+      POSTGRESQL_USER: "${PROD_DB_USERNAME}" # rhel8/postgresql-12 style
+      POSTGRESQL_PASSWORD: "${PROD_DB_PASSWORD}" # rhel8/postgresql-12 style
+      POSTGRESQL_DATABASE: ${PROD_DB_NAME} # rhel8/postgresql-12 style
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/pgsql/data
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
